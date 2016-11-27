@@ -3,13 +3,13 @@ from guess_number import check_number
 
 while True:
     try:
-        times = int(raw_input("Please enter the times that you want:"))
+        times = int(input("Please enter the times that you want:"))
     except ValueError:
-        print "Please enter a postive integer!"
+        print("Please enter a postive integer!")
     if times > 0:
         break
     else:
-        print "Please enter a postive integer!"
+        print("Please enter a postive integer!")
 sum = 0
 times_dictinoary = dict()
 for i in range(0, times):
@@ -30,10 +30,10 @@ for i in range(0, times):
             else:
                 process_dictionary[new_number] = inner_result
     trying_times = len(process_dictionary) + 1
-    print "{}-th trying. The answer is {}, I use {} times to get the answer.".format(i, answer, trying_times)
+    print("{}-th trying. The answer is {}, I use {} times to get the answer.".format(i, answer, trying_times))
     times_dictinoary[trying_times] = times_dictinoary.get(trying_times, 0) + 1
     sum += (trying_times)
-print "The program complete!"
-print "The average times is ", sum * 1.0 / times
+print("The program complete!")
+print("The average times is ", sum * 1.0 / times)
 for number in times_dictinoary:
-    print "There are {} runnings trying {} times".format(times_dictinoary[number], number)
+    print("There are {} runnings trying {} times".format(times_dictinoary[number], number))

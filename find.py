@@ -2,18 +2,18 @@ from guess_number import create_number
 from guess_number import check_number
 
 while True:
-    answer = raw_input("Enter your answer number:")
+    answer = input("Enter your answer number:")
     try:
         if len(answer) != 4:
-            print "Please enter 4 different digits!"
+            print("Please enter 4 different digits!")
             continue
         elif len(set([int(answer[0]), int(answer[1]), int(answer[2]), int(answer[3])])) != 4:
-            print "Please enter 4 different digits!"
+            print("Please enter 4 different digits!")
             continue
         else:
             break
     except ValueError:
-        print "Please enter 4 different digits!"
+        print("Please enter 4 different digits!")
         continue
 process_dictionary = dict()
 error_set = set()
@@ -31,7 +31,7 @@ while True:
             break
         else:
             process_dictionary[new_number] = inner_result
-            print "my {} time(s) guess is {}, I get {}.".format(len(process_dictionary), new_number, inner_result)
-print "my {} time(s) guess is {}, I get {}.".format(len(process_dictionary) + 1, new_number, inner_result)
-print "The answer is {}, I use {} times to get the answer.".format(answer, len(process_dictionary) + 1)
-print len(error_set)
+            print("my {} time(s) guess is {}, I get {}.".format(len(process_dictionary), new_number, inner_result))
+print("my {} time(s) guess is {}, I get {}.".format(len(process_dictionary) + 1, new_number, inner_result))
+print("The answer is {}, I use {} times to get the answer.".format(answer, len(process_dictionary) + 1))
+print(len(error_set))

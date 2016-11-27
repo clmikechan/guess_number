@@ -2,18 +2,18 @@ from guess_number import create_number
 from guess_number import check_number
 
 while True:
-    your_answer = raw_input("Enter your answera number:")
+    your_answer = input("Enter your answera number:")
     try:
         if len(your_answer) != 4:
-            print "Please enter 4 different digits!"
+            print("Please enter 4 different digits!")
             continue
         elif len(set([int(your_answer[0]), int(your_answer[1]), int(your_answer[2]), int(your_answer[3])])) != 4:
-            print "Please enter 4 different digits!"
+            print("Please enter 4 different digits!")
             continue
         else:
             break
     except ValueError:
-        print "Please enter 4 different digits!"
+        print("Please enter 4 different digits!")
         continue
 my_answer = create_number()
 process_dictionary = dict()
@@ -35,11 +35,11 @@ while True:
     if my_result != "4A0B":
         process_dictionary[my_number] = my_result
     #your guess
-    your_number = raw_input("Enter your guess number:")
+    your_number = input("Enter your guess number:")
     your_result = check_number(my_answer,your_number)
     #process
     cnt += 1
-    print "The {}-th time(s): my answer was {}, and I got {}; your answer was {}, and you got {}".format(cnt, my_number, my_result, your_number, your_result)
+    print("The {}-th time(s): my answer was {}, and I got {}; your answer was {}, and you got {}".format(cnt, my_number, my_result, your_number, your_result))
     if my_result == "4A0B" and your_result == "4A0B":
         winner = "tie"
     elif my_result == "4A0B" and your_result != "4A0B":
@@ -48,10 +48,10 @@ while True:
         winner = "you"
     if winner != "":
         break
-print "my answer is {}, and your answer is {}".format(my_answer, your_answer)
+print("my answer is {}, and your answer is {}".format(my_answer, your_answer))
 if winner == "me":
-    print "Yeah! I win!!!!!"
+    print("Yeah! I win!!!!!")
 if winner == "you":
-    print "OK, you win."
+    print("OK, you win.")
 if winner == "tie":
-    print "It's a tie. Let's start a new game!!!!!"
+    print("It's a tie. Let's start a new game!!!!!")
