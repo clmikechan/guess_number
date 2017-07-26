@@ -1,5 +1,6 @@
 from guess_number import create_number
 from guess_number import check_number
+
 ans = ""
 goal_number = create_number()
 cnt = 0
